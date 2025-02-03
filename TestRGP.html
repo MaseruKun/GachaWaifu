@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        #randomImage {
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gacha waifu</h1>
+    <!-- Image element that will change -->
+    <img id="randomImage" src="" alt="Random Image" width="300" height="200">
+    
+    <br><br>
+    <!-- Button to trigger the image change -->
+    <button onclick="changeImage()">Generate Random Image</button>
+
+    <script>
+        // Array of image URLs (make sure these paths are correct)
+        const images = [
+            'https://th.bing.com/th/id/OIP.DlrgRuq0qXMlJzXDFRv8tgHaGO?rs=1&pid=ImgDetMain',  
+            'https://th.bing.com/th/id/OIP.7Uphb783TQOmy93wu7CyeAHaHa?rs=1&pid=ImgDetMain',
+            'https://cdn.oneesports.gg/cdn-data/2024/11/HonkaiStarRail_TheHerta_CloseUp_OfficialArt_Wallpaper-1536x864.jpg',
+            'https://i.pinimg.com/originals/59/d2/81/59d281bc83e8f649f0f1e4360acbc919.jpg',
+            'https://th.bing.com/th/id/OIP.6e7st3VNWByBqB_dHTkphQAAAA?rs=1&pid=ImgDetMain',
+            'https://static.wikia.nocookie.net/heavenburnsred/images/d/d6/Ruka_S2.png/revision/latest/scale-to-width-down/1000?cb=20241229142612',
+            'https://images3.alphacoders.com/131/1315086.png',
+            'https://i.pinimg.com/originals/71/35/fc/7135fc917534a755819d01b42290ed4f.jpg',
+            'https://i.pinimg.com/originals/87/da/4f/87da4f1cad10622ff8fffe4b8cc23415.jpg',
+            'https://th.bing.com/th/id/OIP.1oX4lRvAgVIHgIrjx4LRywHaF7?rs=1&pid=ImgDetMain',
+            'https://dotesports.com/wp-content/uploads/2025/01/wuthering-waves-carlotta-best-build.jpg',
+            'https://i.ytimg.com/vi/IrbFuvZXg8w/maxresdefault.jpg',
+            'https://wallpaperaccess.com/full/2733018.png',
+            'https://1.bp.blogspot.com/-mikROFSnM4s/YQAygQdePXI/AAAAAAAAJnA/r9LftISc7eEZhgMwVmCC41e4g_ADGKivQCPcBGAsYHg/w919/kamisato-ayaka-genshin-impact-art-1-4k-uhdpaper.com-952.1_a-thumbnail.jpg',
+            'https://static.zerochan.net/Okusora.Ayane.1024.4191919.webp',
+            'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3b32c30c-8b80-4b85-a53f-96fd31235b0d/dg743d6-0bc3ce92-ab48-41c4-970c-3aaafe06b33a.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNiMzJjMzBjLThiODAtNGI4NS1hNTNmLTk2ZmQzMTIzNWIwZFwvZGc3NDNkNi0wYmMzY2U5Mi1hYjQ4LTQxYzQtOTcwYy0zYWFhZmUwNmIzM2EuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kOICufj0jNixuc_arfcYuDmQWBJ_uEQmK1t3EJEMSb4',
+            'https://th.bing.com/th/id/OIP.pWr6dol1Hh7yZQr_gpR_MwAAAA?rs=1&pid=ImgDetMain',
+            'https://cdna.artstation.com/p/assets/images/images/023/821/274/large/noredji-morien-img-20191122-080531-465.jpg?1580435123',
+            'https://www.enduins.com/wp-content/uploads/2023/05/girls-frontline-2-1.jpg',
+            'https://th.bing.com/th/id/OIP.Kd95PKHMi-NFeegU1uCirAHaFP?w=849&h=601&rs=1&pid=ImgDetMain',
+            'https://images.hdqwalls.com/download/texas-arknights-4k-t1-3840x2160.jpg',
+            'https://staticdelivery.nexusmods.com/mods/5195/images/1855/1855-1696126085-495631243.png',
+            'https://th.bing.com/th/id/OIP.0Dlzm4HjUEM_E4efkV4GygHaFS?rs=1&pid=ImgDetMain'
+        ];
+
+        // Function to change the image randomly when the button is clicked
+        function changeImage() {
+            // Generate a random index based on the array length
+            const randomIndex = Math.floor(Math.random() * images.length);
+            
+            // Get the image element by its ID
+            const imageElement = document.getElementById('randomImage');
+            
+            // Change the src attribute to the randomly selected image
+            imageElement.src = images[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
