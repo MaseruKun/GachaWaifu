@@ -5,40 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Image Generator</title>
     <style>
+        /* General Body Styles */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
+
+        /* Header Styles */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Image Styles */
         #randomImage {
+            width: 100%;  /* Make image responsive */
+            max-width: 300px; /* Limit maximum size */
+            height: auto; /* Maintain aspect ratio */
             margin-bottom: 20px;
             border: 2px solid #ccc;
+            border-radius: 8px;
         }
+
+        /* Button Styles */
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 12px 24px;
+            font-size: 18px;
             background-color: #4CAF50;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #45a049;
+        }
+
+        /* Responsive Design for Phones */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-   
+
     <h1>Gacha waifu</h1>
-    <!-- Image element that will change -->
     <img id="randomImage" src="" alt="Random Image" width="300" height="200">
     
     <br><br>
-    <!-- Button to trigger the image change -->
     <button onclick="changeImage()">Generate Random Image</button>
 
     <script>
-        // Array of image URLs (make sure these paths are correct)
         const images = [
             'https://th.bing.com/th/id/OIP.DlrgRuq0qXMlJzXDFRv8tgHaGO?rs=1&pid=ImgDetMain',  
             'https://th.bing.com/th/id/OIP.7Uphb783TQOmy93wu7CyeAHaHa?rs=1&pid=ImgDetMain',
