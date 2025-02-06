@@ -46,6 +46,12 @@
             background-color: #45a049;
         }
 
+        /* Disabled button styles */
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
         /* Responsive Design for Phones */
         @media (max-width: 768px) {
             body {
@@ -67,14 +73,14 @@
 <body>
 
     <h1>Gacha waifu</h1>
-    <img id="randomImage" src="" alt="Random Image" width="300" height="200">
+    <img id="randomImage" alt="Random Image" width="300" height="200">
     
     <br><br>
-    <button onclick="changeImage()">Generate Random Image</button>
+    <button id="generateButton" onclick="changeImage()">Generate Random Image</button>
 
     <script>
         const images = [
-'https://th.bing.com/th/id/OIP.DlrgRuq0qXMlJzXDFRv8tgHaGO?rs=1&pid=ImgDetMain',  
+            'https://th.bing.com/th/id/OIP.DlrgRuq0qXMlJzXDFRv8tgHaGO?rs=1&pid=ImgDetMain',  
             'https://th.bing.com/th/id/OIP.7Uphb783TQOmy93wu7CyeAHaHa?rs=1&pid=ImgDetMain',
             'https://cdn.oneesports.gg/cdn-data/2024/11/HonkaiStarRail_TheHerta_CloseUp_OfficialArt_Wallpaper-1536x864.jpg',
             'https://i.pinimg.com/originals/59/d2/81/59d281bc83e8f649f0f1e4360acbc919.jpg',
@@ -129,6 +135,11 @@
             
             // Change the src attribute to the randomly selected image
             imageElement.src = images[randomIndex];
+
+            // Disable the button after generating the image
+            const button = document.getElementById('generateButton');
+            button.disabled = true;
+            button.innerText = "Image Generated";
         }
     </script>
 
