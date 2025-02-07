@@ -14,13 +14,11 @@
             background-color: #f4f4f4;
         }
 
-        /* Header Styles */
         h1 {
             color: #333;
             margin-bottom: 20px;
         }
 
-        /* Image Styles */
         #randomImage {
             width: 100%;  /* Make image responsive */
             max-width: 300px; /* Limit maximum size */
@@ -30,7 +28,6 @@
             border-radius: 8px;
         }
 
-        /* Button Styles */
         button {
             padding: 12px 24px;
             font-size: 18px;
@@ -46,13 +43,11 @@
             background-color: #45a049;
         }
 
-        /* Disabled button styles */
         button:disabled {
             background-color: #ddd;
             cursor: not-allowed;
         }
 
-        /* Responsive Design for Phones */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -76,7 +71,7 @@
     <img id="randomImage" alt="Random Image" width="300" height="200">
     
     <br><br>
-    <button id="generateButton" onclick="changeImage()">Generate Random Image</button>
+    <button id="generateButton" onclick="changeImage()">Gacha Waifumu Disini</button>
 
     <script>
         const images = [
@@ -134,7 +129,18 @@
             'https://th.bing.com/th/id/OIP.cy8e3XrJUdOSu7IypQxWjAHaHa?w=1200&h=1200&rs=1&pid=ImgDetMain',
             'https://vignette.wikia.nocookie.net/tayothelittlebus/images/2/27/1379914188_Tayo_The_Little_Bus_Lani.jpg/revision/latest?cb=20160530030414',
             'https://embed.pixiv.net/artwork.php?illust_id=102563373',
-            'https://www.dexerto.com/cdn-image/wp-content/uploads/2024/07/04/Zenless-Zone-Zero-QoL-feature-makes-it-better-than-Genshin-Impact-Honkai-Star-Rail.jpg?width=3840&quality=75&format=auto'
+            'https://www.dexerto.com/cdn-image/wp-content/uploads/2024/07/04/Zenless-Zone-Zero-QoL-feature-makes-it-better-than-Genshin-Impact-Honkai-Star-Rail.jpg?width=3840&quality=75&format=auto',
+            'https://th.bing.com/th/id/OIP.Q4PzCKL8WZqwctfgGvGP7gHaHa?rs=1&pid=ImgDetMain',
+            'https://i.pinimg.com/originals/79/40/d9/7940d9de331644ab5bf36e0f98e1db0b.jpg',
+            'https://th.bing.com/th/id/OIP.d1KSvA1cQz7sRjc6g7m0ugAAAA?rs=1&pid=ImgDetMain',
+            'https://wallpaperaccess.com/full/1085578.jpg',
+            'https://comicvine.gamespot.com/a/uploads/scale_medium/11146/111467896/8050706-5321228836-18cfe.jpg',
+            'https://i.pinimg.com/originals/0d/47/cf/0d47cf86dca2767a3f2c628c8917a79b.jpg',
+            'https://i.pinimg.com/736x/f4/99/01/f49901d14d0fb2681e9766f05076e89c.jpg',
+            'https://th.bing.com/th/id/OIP.0hQc1OQJoA1LxhYrAYjPLwHaEK?rs=1&pid=ImgDetMain',
+            'https://th.bing.com/th/id/OIP.IVQHk_67uSs0n2h5qpc9HgHaHz?rs=1&pid=ImgDetMain',
+            'https://th.bing.com/th/id/OIP.NZbU7gdgUkOXfJdQVGnaNwAAAA?rs=1&pid=ImgDetMain'
+
         ];
 
         // Function to change the image randomly when the button is clicked
@@ -151,7 +157,7 @@
             // Disable the button after generating the image
             const button = document.getElementById('generateButton');
             button.disabled = true;
-            button.innerText = "Image Generated";
+            button.innerText = "Waifumu Selesai Di Gacha";
         }
     </script>
 
